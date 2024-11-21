@@ -92,3 +92,13 @@ export function sortFastAnalysisResult( result: FastAnalysisResult )
 		dependents: [ ...result.dependents ].sort( compare ),
 	};
 }
+
+export function walk(obj: any, currentPath: string[] = [], cb: (path: string[]) => void) {
+	if (typeof obj === "object" && Object.keys(obj).length === 0) {
+		cb(currentPath);
+		return;
+	}
+	for (const key in obj) {
+		walk(obj[key], [...currentPath, key], cb);
+	}
+}

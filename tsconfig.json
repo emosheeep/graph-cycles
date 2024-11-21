@@ -20,7 +20,7 @@
 		"alwaysStrict": true,
 	},
 	"include": [
-		"index.ts",
+		"index.opz.ts",
 		"lib"
 	]
 }
